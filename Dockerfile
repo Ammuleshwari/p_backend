@@ -8,6 +8,9 @@ WORKDIR /app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 
+# ✅ Give execute permission to mvnw
+RUN chmod +x mvnw
+
 # Download dependencies
 RUN ./mvnw dependency:go-offline
 
@@ -19,4 +22,3 @@ RUN ./mvnw package -DskipTests
 
 # Run the Spring Boot application
 CMD ["java", "-jar", "target/contactservice-0.0.1-SNAPSHOT.jar"]
-
