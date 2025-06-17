@@ -8,7 +8,7 @@ WORKDIR /app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 
-# ✅ Give execute permission to mvnw
+# Give execute permission to mvnw
 RUN chmod +x mvnw
 
 # Download dependencies
